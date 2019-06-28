@@ -1,0 +1,7 @@
+print(readline()
+	.split('')
+	.reduce((ac, i) => ac + ('0' + i.charCodeAt(0).toString(2)).substr(-7), '')
+	.split(/(0+)(1+)|(1+)(0+)/)
+	.filter(i => i && i)
+	.reduce((ac, i) => {return ac + (i[0] === '1' ? '0': '00') + ' ' + i.replace(/1/g, '0') + ' '}, '')
+	.slice(0, -1))
